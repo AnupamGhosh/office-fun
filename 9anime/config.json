@@ -1,8 +1,8 @@
 {
-    "base_url-old": "https://9anime.to/watch/fairy-tail-final-series-dub.nqwm",
-    "base_url": "https://9anime.to/watch/fairy-tail-movie-2-dragon-cry.o39z",
-    "filename_prefix": "fairytail-dragon-cry",
-    "start_episode": 1,
-    "get_episodes": 1,
+    "base_url": "https://9anime.to/watch/fairy-tail-final-series-dub.nqwm",
+    "base_url-dragoncry": "https://9anime.to/watch/fairy-tail-movie-2-dragon-cry.o39z",
+    "filename_prefix": "fairytail",
+    "start_episode": 30,
+    "get_episodes": 5,
     "save_in": "/Users/anupamghosh/Movies/Fairy Tail Last Season"
 }

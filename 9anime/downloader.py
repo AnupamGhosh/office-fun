@@ -150,7 +150,7 @@ class Downloader(object):
     self.anime_html_filepath = os.path.join(CUR_DIR, '%s-python.html' % self.filename_prefix)
 
   def get_episodes_html(self):
-    servers_id = re.match(r".*\.(\w+)", self.base_url).group(1)
+    servers_id = re.search(r".*\.(\w+)", self.base_url).group(1)
     episode_url = '%s%s%s' % (DOMAIN_9ANIME, 'ajax/film/servers/', servers_id)
     content = self.request.get(episode_url)
     html_episodes = json.loads(content)['html']
@@ -195,13 +195,13 @@ class Downloader(object):
       returncode = os.system('wget --no-check-certificate %s -O %s' % (download_link, save_as)) and os.system(
           'curl -k %s -o %s' % (download_link, save_as))
       if not returncode:
-        os.remove(self.anime_html_filepath)
         os.remove(source_html_path)
 
   def download(self):
     self.get_episodes_html()
     parser = self.parse_episode_html()
     self.download_videos(parser)
+    os.remove(self.anime_html_filepath)
 
 
 logging.basicConfig(format='%(funcName)s:%(lineno)d %(levelname)s %(message)s', level=logging.DEBUG)
