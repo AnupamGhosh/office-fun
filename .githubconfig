@@ -1,0 +1,5 @@
+[user]
+    name = Anupam Ghosh
+    email = iamanupamghosh@gmail.com
+[core]
+    sshCommand = ssh -i ~/.ssh/personal_key -F /dev/null
